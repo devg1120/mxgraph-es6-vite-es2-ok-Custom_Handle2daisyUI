@@ -1,0 +1,164 @@
+lines: 102
+lines_mod: 81
+examples/anchors.html
+- Define fixed connection points for all shapes.
+examples/animation.html
+- Using SVG animation to visualize the flow in a pipe.
+examples/autolayout.html
+- Running and animating a layout algorithm after every change to a graph.
+examples/boundary.html
+- Implementing boundary events in BPMN diagrams.
+examples/clipboard.html
+- Using the clipboard for providing cross-tab and cross-browser copy and paste.
+examples/codec.html
+- Dynamically creating a graph from XML and encoding the model into XML, as well  as changing the default style for edges in-place.
+examples/collapse.html
+- Changing the style of a cell based on its collapsed state.
+examples/constituent.html
+- Using cells as parts of other cells.
+examples/contexticons.html
+- Adding icons to selected vertices to carry out special operations.
+examples/control.html
+- Adding controls to specific cells in a graph.
+examples/dragsource.html
+- Using one drag source for multiple graphs and changing the drag icon.
+examples/drop.html
+- Handling native drag and drop of images (requires modern browser).
+examples/dynamicloading.html
+- Loading graph model data dynamically to limit the number of cells in the model.
+examples/dynamicstyle.html
+- Changing the style of a cell by overriding mxGraphModel.
+examples/dynamictoolbar.html
+- Changing the state of the toolbar at runtime.
+examples/edgetolerance.html
+- Increasing the tolerance for hit detection on edges.
+examples/editing.html
+- Using the in-place editor trigger to specify the editing value and write the  new value into a specific field of the user object. Wrapping and DOM nodes as  labels are also demonstrated here.
+examples/events.html
+- Creating a graph container and using the mxDivResizer to update the size,  interaction on the graph, including marquee selection, custom  tooltips, context menu handling and changing the default menu  opacity. It also demonstrates how to use an edgestyle in the  default stylesheet, and handle the doubleclick on the adjustment  point. See also: overlays.html for click event handling.
+examples/extendcanvas.html
+- Implementing an infinite canvas with scrollbars.
+examples/fileio.html
+- Reading an XML file, writing a custom parser, applying an automatic layout  and defining a 2-way edge.
+examples/fixedicon.html
+- Customizing the icon position in the mxLabel shape.
+examples/fixedpoints.html
+- Using fixed connection points for connecting edges to vertices.
+examples/folding.html
+- Using a layout to implement a nested group structure.
+examples/graphlayout.html
+- Using automatic graph layouts and listening to changes of the graph size  to keep the container size in sync.
+examples/grid.html
+- Drawing a grid dynamically using HTML 5 canvas.
+examples/groups.html
+- Using cells as parts of other cells.
+examples/guides.html
+- Using the guidesEnabled and snapToTerminals switches, creating a grid using a canvas and handling cursor keys.
+examples/handles.html
+- Using mxHandle to change custom styles interactively.
+examples/helloport.html
+- Using the isPort hook for visually connecting to another cell.
+examples/helloworld.html
+- Using a DOM node to create a graph and adding vertices and edges.
+examples/hierarchicallayout.html
+- Using the hierarchical and organic layout algorithms.
+examples/hovericons.html
+- Showing icons on vertices as mouse hovers over them.
+examples/hoverstyle.html
+- Change the style of a vertex on mouseover.
+examples/htmllabel.html
+- Using HTML labels that are connected to the state of the user object.
+examples/ie9svg.html
+- Using SVG for rendering a diagram in IE9 (and the HTML5 doctype).
+examples/images.html
+- Using background images and images for for the label- and image-shape.
+examples/indicators.html
+- Using small subshapes (indicators) inside a parent shape, typically an mxLabel.
+examples/jquery.html
+- Using a JQuery plugin to generate labels for vertices on the fly.
+examples/jsondata.html
+- Using JSON to encode/decode parts of the graph model in mxCodec.
+examples/labelposition.html
+- Using the label position styles to set the position of vertex labels.
+examples/labels.html
+- Wrapping and clipping for HTML labels of vertices, truncating labels to fit the  size of a vertex, and manually placing vertex labels and relative children  that act as "sublabels".
+examples/layers.html
+- Using multiple layers to contain cells.
+examples/lod.html
+- Implementing a level of detail per cell.
+examples/map.html
+- Implementing an overlay for Google Maps.
+examples/markers.html
+- Creating custom marker.
+examples/menustyle.html
+- Styling the built-in popupmenu using CSS.
+examples/merge.html
+- Using the mergeChildren function to merge two graphs.
+examples/monitor.html
+- Using mxGraph to display the current state of a workflow.
+examples/morph.html
+- Using mxMorphing for simple cell animations.
+examples/offpage.html
+- Creating offpage connectors in a graph and loading a new diagram on a  single click.
+examples/orgchart.html
+- Using automatic layouts, fit to page zoom and poster print (across  multiple pages).
+examples/orthogonal.html
+- Demonstrates the use of port constraints and orthogonal edge styles and handlers.
+examples/overlays.html
+- Cell highlighting, overlays and handling click and double click  events. See also: events.html for more event handling.
+examples/pagebreaks.html
+- Using the pageBreaksVisible and preferPageSize switches and    adding headers and footers to print output.
+examples/perimeter.html
+- How to avoid edge and label intersections.
+examples/permissions.html
+- Creating permissions to define the available operations on a graph.
+examples/portrefs.html
+- Referencing connection points by ID.
+examples/ports.html
+- Implementing ports as child vertices with relative positions,  drag and drop and using images and HTML in cells.
+examples/radialtreelayout.html
+- Demonstrates the use of Radial Tree Layout with a graph.
+examples/resources.html
+- Disabling the Synchronous XMLHttpRequest on main thread warning.
+examples/schema.html
+- Implementing a database schema editor.
+examples/scrollbars.html
+- Using a scrollable table with different sections in a cell label.
+examples/secondlabel.html
+- Adding another string label to vertices.
+examples/serverview.html
+- Using a server-side image of the graph as the diagram in the client.
+examples/shape.html
+- How to implement and use a custom shape.
+examples/showregion.html
+- Using a custom    rubberband handler to show the selected region in a new window.
+examples/standardsmode.html
+- How to use mxGraphs VML rendering with a Doctype in IE.
+examples/stencils.html
+- Using an XML file to define new stencils to be used as shapes.
+examples/stylesheet.html
+- Using a custom stylesheet and control points in edges, as well as  overriding the getLabel and getTooltip function to return  dynamic information, and making a supercall in JavaScript.
+examples/swimlanes.html
+- Using swimlanes for pools and lanes and using the stack layout as an  automatic layout.
+examples/thread.html
+- Setting overlays in mxGraph from within a timed function.
+examples/toolbar.html
+- Using existing cells as templates for creating new cells.
+examples/touch.html
+- Handling touch, mouse and pointer events.
+examples/tree.html
+- Folding for subtrees in acyclic graphs (trees).
+examples/uiconfig.html
+- Using a config file to configure the toolbar and popup menu in mxEditor.
+examples/userobject.html
+- Using XML objects as values for cells.
+examples/validation.html
+- Using multiplicities for automatically validating a graph.
+examples/visibility.html
+- Various solutions for hiding and showing cells.
+examples/windows.html
+- Using the mxWindow class for displaying windows.
+examples/wires.html
+- Drawing electrical and digital circuits with devices and wires.
+examples/wrapping.html
+- Using HTML markup and word-wrapping in vertex and edge labels.

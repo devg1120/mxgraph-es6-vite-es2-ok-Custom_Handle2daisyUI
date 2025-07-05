@@ -1,0 +1,188 @@
+<html>
+<head>
+	<title>JavaScript Diagram Editor</title>
+	<!--
+    <link rel="stylesheet" href="../docs/css/manual-styles.css">
+    <link rel="stylesheet" href="../docs/css/manual-colors.css">
+	-->
+
+<style>
+iframe {
+ border: none;
+ margin-top: 20px;
+ margin-left: 30px;
+ margin-bottom: 20px;
+ width: 550px;
+ height: 300px;
+ overflow: hidden;
+}
+</style>
+
+</head>
+<body>
+<h1>mxGraph JavaScript</h1>
+<h2>Installation</h2>
+<p>
+	The examples can be edited with any texteditor. To run the examples point
+	your browser directly to the local files (use links below) or use a
+	webserver to deliver the files. Note that the files should always be
+	delivered via a webserver in production. Local usage of files is only
+	recommended for development and testing. (Please read <a href="../docs/known-issues.html#AccessDenied">this</button>
+	for running examples from the local filesystem in Internet Explorer.)
+</p>
+<h2>Examples</h2>
+<p>
+	javascript/examples/editors contains the following examples:
+</p>
+<ul>
+  <li><a  href="examples/grapheditor/www/index.html" >Graph Editor< /button> -
+  Fully functional diagram editor and drawing application.</li>
+  <li><a  href="examples/editors/diagrameditor.html" >mxDraw< /button> -
+  Web 2.0-style diagram editor and drawing application.</li>
+  <li><a  href="examples/editors/processeditor.html "> mxProcess< /button> -
+  Process editor with a fancy stylesheet and user interface.</li>
+  <li><a  href="examples/editors/workfloweditor.html" >mxWorkflow< /button> -
+  BPMN workflow editor with various example diagrams.</li>
+  <li><a  href="examples/editors/layouteditor.html" >mxWorkflow/Layout< /button> -
+  BPMN workflow editor with automatic layout.<i>(Experimental)</i></li>
+</ul>
+<p>
+	javascript/examples contains the following examples:
+</p>
+
+<div id="iframe"></div>
+
+<ul>
+  <li><button value="examples/anchors.html" onclick="show(this)" >Anchors</button> - Define fixed connection points for all shapes.</li>
+  <li><button value="examples/anchors.html" onclick="show(this)">Anchors</button> - Define fixed connection points for all shapes.</li>
+  <li><button value="examples/animation.html" onclick="show(this)">Animation</button> - Using SVG animation to visualize the flow in a pipe.</li>
+  <li><button value="examples/autolayout.html" onclick="show(this)">Autolayout</button> - Running and animating a layout algorithm after every change to a graph.</li>
+  <li><button value="examples/boundary.html" onclick="show(this)">Boundary</button> - Implementing boundary events in BPMN diagrams.</li>
+  <li><button value="examples/clipboard.html" onclick="show(this)">Clipboard</button> - Using the clipboard for providing cross-tab and cross-browser copy and paste.</li>
+  <li><button value="examples/codec.html" onclick="show(this)">Codec</button> - Dynamically creating a graph from XML and encoding the model into XML, as well
+  as changing the default style for edges in-place.</li>
+  <li><button value="examples/collapse.html" onclick="show(this)">Collapse</button> - Changing the style of a cell based on its collapsed state.</li>
+  <li><button value="examples/constituent.html" onclick="show(this)">Constituent</button> - Using cells as parts of other cells.</li>
+  <li><button value="examples/contexticons.html" onclick="show(this)">ContextIcons</button> - Adding icons to selected vertices to carry out special operations.</li>
+  <li><button value="examples/control.html" onclick="show(this)">Control</button> - Adding controls to specific cells in a graph.</li>
+  <li><button value="examples/dragsource.html" onclick="show(this)">Dragsource</button> - Using one drag source for multiple graphs and changing the drag icon.</li>
+  <li><button value="examples/drop.html" onclick="show(this)">Drop</button> - Handling native drag and drop of images (requires modern browser).</li>
+  <li><button value="examples/dynamicloading.html" onclick="show(this)">Dynamicloading</button> - Loading graph model data dynamically to limit the number of cells in the model.</li>
+  <li><button value="examples/dynamicstyle.html" onclick="show(this)">Dynamic Style</button> - Changing the style of a cell by overriding mxGraphModel.</li>
+  <li><button value="examples/dynamictoolbar.html" onclick="show(this)">Dynamic Toolbar</button> - Changing the state of the toolbar at runtime.</li>
+  <li><button value="examples/edgetolerance.html" onclick="show(this)">EdgeTolerance</button> - Increasing the tolerance for hit detection on edges.</li>
+  <li><button value="examples/editing.html" onclick="show(this)">Editing</button> - Using the in-place editor trigger to specify the editing value and write the
+  new value into a specific field of the user object. Wrapping and DOM nodes as
+  labels are also demonstrated here.</li>
+  <li><button value="examples/events.html" onclick="show(this)">Events</button> - Creating a graph container and using the mxDivResizer to update the size,
+  interaction on the graph, including marquee selection, custom 
+  tooltips, context menu handling and changing the default menu
+  opacity. It also demonstrates how to use an edgestyle in the 
+  default stylesheet, and handle the doubleclick on the adjustment
+  point. See also: overlays.html for click event handling.</li>
+  <li><button value="examples/extendcanvas.html" onclick="show(this)">Extend canvas</button> - Implementing an infinite canvas with scrollbars.</li>
+  <li><button value="examples/fileio.html" onclick="show(this)">File I/O</button> - Reading an XML file, writing a custom parser, applying an automatic layout
+  and defining a 2-way edge.</li>
+  <li><button value="examples/fixedicon.html" onclick="show(this)">FixedIcon</button> - Customizing the icon position in the mxLabel shape.</li>
+  <li><button value="examples/fixedpoints.html" onclick="show(this)">FixedPoints</button> - Using fixed connection points for connecting edges to vertices.</li>
+  <li><button value="examples/folding.html" onclick="show(this)">Folding</button> - Using a layout to implement a nested group structure.</li>
+  <li><button value="examples/graphlayout.html" onclick="show(this)">Graphlayout</button> - Using automatic graph layouts and listening to changes of the graph size
+  to keep the container size in sync.</li>
+  <li><button value="examples/grid.html" onclick="show(this)">Grid</button> - Drawing a grid dynamically using HTML 5 canvas.</li>
+  <li><button value="examples/groups.html" onclick="show(this)">Groups</button> - Using cells as parts of other cells.</li>
+  <li><button value="examples/guides.html" onclick="show(this)">Guides</button> - Using the guidesEnabled and snapToTerminals switches, creating a grid using a canvas and handling cursor keys.</li>
+  <li><button value="examples/handles.html" onclick="show(this)">Handles</button> - Using mxHandle to change custom styles interactively.</li>
+  <li><button value="examples/helloport.html" onclick="show(this)">HelloPort</button> - Using the isPort hook for visually connecting to another cell.</li>
+  <li><button value="examples/helloworld.html" onclick="show(this)">Hello, World!</button> - Using a DOM node to create a graph and adding vertices and edges.</li>
+  <li><button value="examples/hierarchicallayout.html" onclick="show(this)">Hierarchical Layout</button> - Using the hierarchical and organic layout algorithms.</li>
+  <li><button value="examples/hovericons.html" onclick="show(this)">HoverIcons</button> - Showing icons on vertices as mouse hovers over them.</li>
+  <li><button value="examples/hoverstyle.html" onclick="show(this)">Hoverstyle</button> - Change the style of a vertex on mouseover.</li>
+  <li><button value="examples/htmllabel.html" onclick="show(this)">HTML label</button> - Using HTML labels that are connected to the state of the user object.</li>
+  <li><button value="examples/ie9svg.html" onclick="show(this)">IE9SVG</button> - Using SVG for rendering a diagram in IE9 (and the HTML5 doctype).</li>
+  <li><button value="examples/images.html" onclick="show(this)">Images</button> - Using background images and images for for the label- and image-shape.</li>
+  <li><button value="examples/indicators.html" onclick="show(this)">Indicators</button> - Using small subshapes (indicators) inside a parent shape, typically an mxLabel.</li>
+  <li><button value="examples/jquery.html" onclick="show(this)">JQuery</button> - Using a JQuery plugin to generate labels for vertices on the fly.</li>
+  <li><button value="examples/jsondata.html" onclick="show(this)">JSON data</button> - Using JSON to encode/decode parts of the graph model in mxCodec.</li>
+  <li><button value="examples/labelposition.html" onclick="show(this)">Label Position</button> - Using the label position styles to set the position of vertex labels.</li>
+  <li><button value="examples/labels.html" onclick="show(this)">Labels</button> - Wrapping and clipping for HTML labels of vertices, truncating labels to fit the
+  size of a vertex, and manually placing vertex labels and relative children
+  that act as "sublabels".</li>
+  <li><button value="examples/layers.html" onclick="show(this)">Layers</button> - Using multiple layers to contain cells.</li>
+  <li><button value="examples/lod.html" onclick="show(this)">LOD</button> - Implementing a level of detail per cell.</li>
+  <li><button value="examples/map.html" onclick="show(this)">Map</button> - Implementing an overlay for Google Maps.</li>
+  <li><button value="examples/markers.html" onclick="show(this)">Markers</button> - Creating custom marker.</li>
+  <li><button value="examples/menustyle.html" onclick="show(this)">Menustyle</button> - Styling the built-in popupmenu using CSS.</li>
+  <li><button value="examples/merge.html" onclick="show(this)">Merge</button> - Using the mergeChildren function to merge two graphs.</li>
+  <li><button value="examples/monitor.html" onclick="show(this)">Monitor</button> - Using mxGraph to display the current state of a workflow.</li>
+  <li><button value="examples/morph.html" onclick="show(this)">Morph</button> - Using mxMorphing for simple cell animations.</li>
+  <li><button value="examples/offpage.html" onclick="show(this)">Offpage Connectors</button> - Creating offpage connectors in a graph and loading a new diagram on a
+  single click.</li>
+  <li><button value="examples/orgchart.html" onclick="show(this)">Orgchart</button> - Using automatic layouts, fit to page zoom and poster print (across
+  multiple pages).</li>
+  <li><button value="examples/orthogonal.html" onclick="show(this)">Orthogonal</button> - Demonstrates the use of port constraints and orthogonal edge styles and handlers.</li>
+  <li><button value="examples/overlays.html" onclick="show(this)">Overlays</button> - Cell highlighting, overlays and handling click and double click
+  events. See also: events.html for more event handling.</li>
+  <li><button value="examples/pagebreaks.html" onclick="show(this)">Pagebreaks</button> - Using the pageBreaksVisible and preferPageSize switches and
+    adding headers and footers to print output.</li>
+    <li><button value="examples/perimeter.html" onclick="show(this)">Perimeter</button> - How to avoid edge and label intersections.</li>
+  <li><button value="examples/permissions.html" onclick="show(this)">Permissions</button> - Creating permissions to define the available operations on a graph.</li>
+  <li><button value="examples/portrefs.html" onclick="show(this)">Portrefs</button> - Referencing connection points by ID.</li>
+  <li><button value="examples/ports.html" onclick="show(this)">Ports</button> - Implementing ports as child vertices with relative positions,
+  drag and drop and using images and HTML in cells.</li>
+  <li><button value="examples/radialtreelayout.html" onclick="show(this)">Radial Tree Layout</button> - Demonstrates the use of Radial Tree Layout with a graph.</li>
+  <li><button value="examples/resources.html" onclick="show(this)">Resources</button> - Disabling the Synchronous XMLHttpRequest on main thread warning.</li>
+  <li><button value="examples/schema.html" onclick="show(this)">Schema</button> - Implementing a database schema editor.</li>
+  <li><button value="examples/scrollbars.html" onclick="show(this)">Scrollbars</button> - Using a scrollable table with different sections in a cell label.</li>
+  <li><button value="examples/secondlabel.html" onclick="show(this)">Secondlabel</button> - Adding another string label to vertices.</li>
+  <li><button value="examples/serverview.html" onclick="show(this)">ServerView</button> - Using a server-side image of the graph as the diagram in the client.</li>
+  <li><button value="examples/shape.html" onclick="show(this)">Shape</button> - How to implement and use a custom shape.</li>
+  <li><button value="examples/showregion.html" onclick="show(this)">Showregion</button> - Using a custom
+    rubberband handler to show the selected region in a new window.</li>
+  <li><button value="examples/standardsmode.html" onclick="show(this)">Standardsmode</button> - How to use mxGraphs VML rendering with a Doctype in IE.</li>
+  <li><button value="examples/stencils.html" onclick="show(this)">Stencils</button> - Using an XML file to define new stencils to be used as shapes.</li>
+  <li><button value="examples/stylesheet.html" onclick="show(this)">Stylesheet</button> - Using a custom stylesheet and control points in edges, as well as
+  overriding the getLabel and getTooltip function to return
+  dynamic information, and making a supercall in JavaScript.</li>
+  <li><button value="examples/swimlanes.html" onclick="show(this)">Swimlanes</button> - Using swimlanes for pools and lanes and using the stack layout as an
+  automatic layout.</li>
+  <li><button value="examples/thread.html" onclick="show(this)">Thread</button> - Setting overlays in mxGraph from within a timed function.</li>
+  <li><button value="examples/toolbar.html" onclick="show(this)">Toolbar</button> - Using existing cells as templates for creating new cells.</li>
+  <li><button value="examples/touch.html" onclick="show(this)">Touch</button> - Handling touch, mouse and pointer events.</li>
+  <li><button value="examples/tree.html" onclick="show(this)">Tree</button> - Folding for subtrees in acyclic graphs (trees).</li>  
+  <li><button value="examples/uiconfig.html" onclick="show(this)">UIConfig</button> - Using a config file to configure the toolbar and popup menu in mxEditor.</li>
+  <li><button value="examples/userobject.html" onclick="show(this)">Userobject</button> - Using XML objects as values for cells.</li>
+  <li><button value="examples/validation.html" onclick="show(this)">Validation</button> - Using multiplicities for automatically validating a graph.</li>
+  <li><button value="examples/visibility.html" onclick="show(this)">Visibility</button> - Various solutions for hiding and showing cells.</li>
+  <li><button value="examples/windows.html" onclick="show(this)">Windows</button> - Using the mxWindow class for displaying windows.</li>
+  <li><button value="examples/wires.html" onclick="show(this)">Wires</button> - Drawing electrical and digital circuits with devices and wires.</li>
+  <li><button value="examples/wrapping.html" onclick="show(this)">Wrapping</button> - Using HTML markup and word-wrapping in vertex and edge labels.</li>
+</ul>
+<hr size="1">
+&copy; 2006-2017 by JGraph Ltd.
+
+<script>
+
+let iframe = null;
+
+window.onload = function() {
+    const parent = document.getElementById("iframe");
+    iframe = document.createElement('iframe');
+    iframe.src = "examples/animation.html";
+    iframe.width = '300';
+    iframe.height = '200';
+    parent.appendChild(iframe);
+
+}
+
+
+function show(obj) {
+
+  console.log("exshow!!")  ;
+  console.log(obj.value)  ;
+  iframe.src = obj.value
+
+}
+</script>
+
+</body>
+</html>

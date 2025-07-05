@@ -1,0 +1,31 @@
+
+---------------------------------------------------------
+customHandler 表示制限	　scale >=1
+
+# src/handler/mxVertexHandler.js
+
+redrawHandles() {
+
+......
+
+
+if (this.state.view.scale >= 1) {  // GUSA  GS
+    try {
+    if (this.customHandles != null) {
+      for (var i = 0; i < this.customHandles.length; i++) {
+        var temp = this.customHandles[i].shape.node.style.display;
+        this.customHandles[i].redraw();
+        this.customHandles[i].shape.node.style.display = temp;
+        this.customHandles[i].shape.node.style.visibility =
+          this.isCustomHandleVisible(this.customHandles[i]) ? "" : "hidden";
+      }
+    }
+  
+    } catch (error) {
+      console.log("ERROR", error);
+    }
+}
+
+-----
+
+}

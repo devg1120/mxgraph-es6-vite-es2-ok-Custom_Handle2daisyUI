@@ -1,0 +1,7 @@
+vi .prettierrc.yaml 
+----------------------
+printWidth: 240
+----------------------
+
+npx prettier --write index.html
+
