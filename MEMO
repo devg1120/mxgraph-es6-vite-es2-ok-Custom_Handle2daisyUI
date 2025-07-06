@@ -1,4 +1,9 @@
+https://daisyui.com/docs/utilities/?lang=ja
 
+.menu {
+  --menu-active-bg: blue;
+  --menu-active-fg: white;
+}
 ---------------------------------------------------------
 customHandler 表示制限	　scale >=1
 

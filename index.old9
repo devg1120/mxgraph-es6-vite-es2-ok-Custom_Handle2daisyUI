@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,16 +13,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark-reasonable.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-
+    <!--
+    <link rel="stylesheet" href="app.css" />
+-->
     <style>
-    /*
-    @import "tailwindcss";
-    @plugin "daisyui" {
-      themes: dark --default, light --prefersdark, cupcake;
-    }
-    */   
       .menu {
-        --menu-active-bg: #6495ed;
+        --menu-active-bg: green;
         --menu-active-fg: white;
       }
 
@@ -85,19 +81,16 @@
         color: #0d6efd;
       }
 
+      /*
+        pre,code {
+         white-space-collapse: break-spaces;
+	}
+*/
       pre code {
         word-wrap: normal !important;
         overflow-wrap: normal !important;
         white-space: pre !important;
       }
-
-#terminal{
-    font-family: 'courier new', Futura, Helvetica, '游ゴシック', 'メイリオ', Osaka;
-    border: none;    /* 変な余白が出ないように */
-    color: white;
-    font-size: 10pt;
-}
-
     </style>
   </head>
   <body>
@@ -373,7 +366,21 @@
         </div>
         <div class="flex-5 h-180 overflow-y-scroll">
           <!--MAIN-->
-          <div class="navbar2 bg-blue-500">
+          <!--
+        <div class="row">
+          <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+            <div class="card">
+              <h5 class="card-header" id="title">mxGraph Demo</h5>
+              <h4 class="card-header" id="src">src</h5>
+              <div class="card-body">
+                <div id="desc"></div>
+                <div id="iframe"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+-->
+          <div class="navbar2 bg-blue-200">
             <button class="btn btn-ghost text-xl" id="title">daisyUI</button>
           </div>
 
@@ -382,6 +389,10 @@
             <div id="iframe"></div>
           </div>
 
+          <!--
+                <div id="desc"></div>
+                <div id="iframe"></div>
+-->
           <div class="row">
             <div class="col-12 col-xl-8 mb-4 mb-lg-0">
               <div class="card">
@@ -393,7 +404,8 @@
             </div>
           </div>
         </div>
-	<!--
+        <!-- end flex -->
+        <!--
         <footer class="pt-5 d-flex justify-content-between">
           <span>Copyright © 2019-2020 <a href="https://themesberg.com">Themesberg</a></span>
           <ul class="nav m-0">
@@ -408,12 +420,8 @@
             </li>
           </ul>
         </footer>
-	-->
-        <textarea id="terminal" rows="20" cols="30" spellcheck="false"></textarea>
-
-
+-->
       </div>
-        <!-- end flex -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -422,7 +430,6 @@
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script>
-	    /*
       new Chartist.Line(
         "#traffic-chart",
         {
@@ -434,7 +441,6 @@
           showArea: true,
         },
       );
-	   */
     </script>
     <script>
       let iframe = null;
@@ -496,7 +502,6 @@
 
         //code.innerHTML = hljs.highlight(text, { language: 'html' }).value;
         code.innerHTML = hljs.highlight(text, { language: "javascript" }).value;
-        console.log(src);
       }
     </script>
 
@@ -585,15 +590,6 @@
         examples$wires_html: "- Drawing electrical and digital circuits with devices and wires.",
         examples$wrapping_html: "- Using HTML markup and word-wrapping in vertex and edge labels.",
       };
-    </script>
-    <script>
-        const terminal = document.getElementById("terminal");
-
-        function captureLog(msg) {
-                terminal.value += msg;
-                terminal.value += '\n';
-        }
-        window.console.log = captureLog;
     </script>
   </body>
 </html>

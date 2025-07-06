@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,20 +13,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark-reasonable.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-
+<!--
+    <link rel="stylesheet" href="app.css" />
+-->
     <style>
-    /*
-    @import "tailwindcss";
-    @plugin "daisyui" {
-      themes: dark --default, light --prefersdark, cupcake;
-    }
-    */   
-      .menu {
-        --menu-active-bg: #6495ed;
-        --menu-active-fg: white;
-      }
+.menu { 
+  --menu-active-bg: green;
+  --menu-active-fg: white;
+}
 
-      /*
+/*
        iframe {
          border: 2px red;
 	 padding: 0;
@@ -35,18 +31,20 @@
 
        }
 */
-      .navbar2 {
-        position: sticky;
-        top: 0px;
-        z-index: 40;
-        margin: 0;
-        padding: 0;
-      }
+.navbar2 {
+   position: sticky;
+  top: 0px;
+  z-index: 40;
+  margin:0;
+  padding:0;
+}
 
-      .iframe-base {
-        margin: 0;
-        background-color: #ffffff;
-      }
+
+       .iframe-base {
+	 margin: 0;
+         background-color: #ffffff;
+
+       }
       .sidebar {
         position: fixed;
         top: 0;
@@ -85,58 +83,57 @@
         color: #0d6efd;
       }
 
+      /*
+        pre,code {
+         white-space-collapse: break-spaces;
+	}
+*/
       pre code {
         word-wrap: normal !important;
         overflow-wrap: normal !important;
         white-space: pre !important;
       }
-
-#terminal{
-    font-family: 'courier new', Futura, Helvetica, '游ゴシック', 'メイリオ', Osaka;
-    border: none;    /* 変な余白が出ないように */
-    color: white;
-    font-size: 10pt;
-}
-
     </style>
   </head>
   <body>
-    <div>
-      <div class="navbar bg-base-100 shadow-sm">
-        <div class="flex-none">
-          <button class="btn btn-square btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-          </button>
-          TOP
-        </div>
-        <div class="flex-1">
-          <a class="btn btn-ghost text-xl">daisyUI</a>
-        </div>
-        <div class="flex-none">
-          <button class="btn btn-square btn-ghost">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
-            </svg>
-          </button>
-        </div>
+ <div>
+
+    <div class="navbar bg-base-100 shadow-sm">
+      <div class="flex-none">
+        <button class="btn btn-square btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+	TOP
       </div>
-      <div class="flex">
-        <div class="w-64 flex-1 h-180 overflow-y-scroll">
-          <!--MENU-->
-          <div class="position-sticky">
-            <!--
+      <div class="flex-1">
+        <a class="btn btn-ghost text-xl">daisyUI</a>
+      </div>
+      <div class="flex-none">
+        <button class="btn btn-square btn-ghost">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="flex" >
+    <div class="w-64 flex-1 h-180 overflow-y-scroll" >
+	    <!--MENU-->
+        <div class="position-sticky">
+		<!--
            <ul class="menu bg-base-200 rounded-box w-56">
 		-->
-            <ul class="menu bg-base-150 w-56">
-              <li>
-                <button value="examples/anchors.html" onclick="show(this)">Anchors</button>
-              </li>
-              <li>
-                <button value="examples/animation.html" onclick="show(this)">Animation</button>
-              </li>
-              <li>
-                <button value="examples/autolayout.html" onclick="show(this)">Autolayout</button>
-              </li>
+           <ul class="menu bg-base-150 w-56">
+
+            <li>
+              <button  value="examples/anchors.html" onclick="show(this)">Anchors</button>
+            </li>
+            <li>
+              <button value="examples/animation.html" onclick="show(this)">Animation</button>
+            </li>
+            <li>
+              <button value="examples/autolayout.html" onclick="show(this)">Autolayout</button>
+            </li>
               <li>
                 <button value="examples/boundary.html" onclick="show(this)">Boundary</button>
               </li>
@@ -182,7 +179,7 @@
               <li>
                 <button value="examples/events.html" onclick="show(this)">Events</button>
               </li>
-              <li>
+             <li>
                 <button value="examples/extendcanvas.html" onclick="show(this)">Extend canvas</button>
               </li>
               <li>
@@ -367,33 +364,52 @@
               </li>
               <li>
                 <button value="examples/wrapping.html" onclick="show(this)">Wrapping</button>
-              </li>
-            </ul>
-          </div>
+              </li> 
+          </ul>
         </div>
-        <div class="flex-5 h-180 overflow-y-scroll">
-          <!--MAIN-->
-          <div class="navbar2 bg-blue-500">
-            <button class="btn btn-ghost text-xl" id="title">daisyUI</button>
-          </div>
-
-          <div class="iframe-base sticky top-10 z-40">
-            <div id="desc"></div>
-            <div id="iframe"></div>
-          </div>
-
-          <div class="row">
-            <div class="col-12 col-xl-8 mb-4 mb-lg-0">
-              <div class="card">
-                <h5 class="card-header" id="code-title">Code</h5>
-                <div class="card-body">
-                  <pre><code  id="codeview" class="language-javascript"> ></code></pre>
-                </div>
+      </div>
+      <div class="flex-5 h-180 overflow-y-scroll">
+	      <!--MAIN-->
+<!--
+        <div class="row">
+          <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+            <div class="card">
+              <h5 class="card-header" id="title">mxGraph Demo</h5>
+              <h4 class="card-header" id="src">src</h5>
+              <div class="card-body">
+                <div id="desc"></div>
+                <div id="iframe"></div>
               </div>
             </div>
           </div>
         </div>
-	<!--
+-->
+<div class="navbar2  bg-blue-200">
+  <button class="btn btn-ghost text-xl" id="title" >daisyUI</button>
+</div>
+
+<div class="iframe-base sticky top-10 z-40" >
+                <div id="desc"></div>
+                <div id="iframe"></div>
+</div>
+
+<!--
+                <div id="desc"></div>
+                <div id="iframe"></div>
+-->
+        <div class="row">
+          <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+            <div class="card">
+              <h5 class="card-header" id="code-title">Code</h5>
+              <div class="card-body">
+                <pre><code  id="codeview" class="language-javascript"> ></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <!-- end flex -->
+<!--
         <footer class="pt-5 d-flex justify-content-between">
           <span>Copyright © 2019-2020 <a href="https://themesberg.com">Themesberg</a></span>
           <ul class="nav m-0">
@@ -408,13 +424,10 @@
             </li>
           </ul>
         </footer>
-	-->
-        <textarea id="terminal" rows="20" cols="30" spellcheck="false"></textarea>
-
-
+-->
       </div>
-        <!-- end flex -->
     </div>
+  </div>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
@@ -422,7 +435,6 @@
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script>
-	    /*
       new Chartist.Line(
         "#traffic-chart",
         {
@@ -434,7 +446,6 @@
           showArea: true,
         },
       );
-	   */
     </script>
     <script>
       let iframe = null;
@@ -462,13 +473,14 @@
         desc.innerHTML = `<blockquote><font size="2" color="#3399ff">${desc_str}</font></blockquote>`;
 
         let buttons = document.querySelectorAll("button");
-        for (const obj of buttons) {
-          if (title_text == obj.childNodes[0].data) {
-            //console.log("OK");
-            obj.classList.add("menu-active");
-            active = obj;
-          }
-        }
+        for (const obj of buttons ) {
+	     if (title_text == obj.childNodes[0].data ) {
+                     //console.log("OK");
+                     obj.classList.add("menu-active");
+                     active = obj;
+		}
+
+	  }
       };
 
       async function show(obj) {
@@ -496,7 +508,6 @@
 
         //code.innerHTML = hljs.highlight(text, { language: 'html' }).value;
         code.innerHTML = hljs.highlight(text, { language: "javascript" }).value;
-        console.log(src);
       }
     </script>
 
@@ -585,15 +596,6 @@
         examples$wires_html: "- Drawing electrical and digital circuits with devices and wires.",
         examples$wrapping_html: "- Using HTML markup and word-wrapping in vertex and edge labels.",
       };
-    </script>
-    <script>
-        const terminal = document.getElementById("terminal");
-
-        function captureLog(msg) {
-                terminal.value += msg;
-                terminal.value += '\n';
-        }
-        window.console.log = captureLog;
     </script>
   </body>
 </html>
