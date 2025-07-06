@@ -29,6 +29,7 @@ https://github.com/saadeghi/theme-change
 [data-theme='pink'] {
   --my-color: #ffabc8;
 }
+
     /*
     @import "tailwindcss";
     @plugin "daisyui" {
@@ -112,11 +113,37 @@ https://github.com/saadeghi/theme-change
     font-size: 10pt;
 }
 
+
+#theme-img2 {
+width: 30px;
+height: 40px;
+color: red;
+background-color: green;
+}
+
+.light-mode{
+width: 30px;
+height: 40px;
+border: 0;
+/* color: #000000; */
+background: url(images/light-mode-svgrepo-com.svg) no-repeat;
+background-size: 100% 100%;
+}
+
+
+.dark-mode{
+width: 30px;
+height: 40px;
+border: 0;
+background: url(images/dark-mode-svgrepo-com.svg) no-repeat;
+background-size: 100% 100%;
+}
+
     </style>
   </head>
   <body>
     <div>
-      <div class="navbar bg-base-100 shadow-sm">
+      <div class="navbar bg-base-100 shadow-sm gap-4">
         <div class="flex-none">
           <button class="btn btn-square btn-ghost">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -126,6 +153,14 @@ https://github.com/saadeghi/theme-change
         <div class="flex-1">
           <a class="btn btn-ghost text-xl">daisyUI</a>
         </div>
+        <div class="flex-none">
+		<div id="theme-img" class="dark-mode" ></div>
+        </div>
+	<!--
+        <div class="flex-none">
+		<img src="images/light-mode-svgrepo-com.svg" id="theme-img2" ></img>
+        </div>
+	-->
         <div class="flex-none">
 		<button id="theme-toggle" data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" onclick="theme(this)">dark</button>
         </div>
@@ -494,6 +529,28 @@ https://github.com/saadeghi/theme-change
             active = obj;
           }
         }
+
+	const htmls = document.getElementsByTagName('html')
+        const mode = htmls[0].getAttribute('data-theme')
+	const toggle = document.getElementById('theme-toggle')
+        //toggle.innerText = mode;
+        console.log(mode);
+	const img = document.getElementById('theme-img')
+        if (mode == "dark") {
+             toggle.innerText = "dark";
+             if(img.classList.contains('light-mode')){
+                 img.classList.remove('light-mode')
+              }
+              img.classList.add('dark-mode')
+        } else {
+             toggle.innerText = "light";
+             if(img.classList.contains('dark-mode')){
+                 img.classList.remove('dark-mode')
+              }
+              img.classList.add('light-mode')
+	}
+
+
       };
 
       async function show(obj) {
@@ -524,12 +581,26 @@ https://github.com/saadeghi/theme-change
         console.log(src);
       }
       async function theme(obj) {
-        console.dir(obj)
 	const htmls = document.getElementsByTagName('html')
-        console.log(htmls[0].getAttribute('data-theme'))
         const mode = htmls[0].getAttribute('data-theme')
 	const toggle = document.getElementById('theme-toggle')
-        toggle.innerText = mode;
+        //toggle.innerText = mode;
+        console.log(mode);
+	const img = document.getElementById('theme-img')
+        if (mode == "light") {
+             toggle.innerText = "dark";
+             if(img.classList.contains('light-mode')){
+                 img.classList.remove('light-mode')
+              }
+              img.classList.add('dark-mode')
+        } else {
+             toggle.innerText = "light";
+             if(img.classList.contains('dark-mode')){
+                 img.classList.remove('dark-mode')
+              }
+              img.classList.add('light-mode')
+	}
+  
       }
     </script>
 
@@ -626,7 +697,7 @@ https://github.com/saadeghi/theme-change
                 terminal.value += msg;
                 terminal.value += '\n';
         }
-        //window.console.log = captureLog;
+        window.console.log = captureLog;
     </script>
   </body>
 </html>
