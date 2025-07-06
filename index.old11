@@ -13,29 +13,29 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark-reasonable.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-    <!--
+<!--
 https://github.com/saadeghi/theme-change
 -->
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 
     <style>
-      :root {
-        --my-color: #fff;
-        /* or any other variables/style */
-      }
-      [data-theme="dark"] {
-        --my-color: #000;
-      }
-      [data-theme="pink"] {
-        --my-color: #ffabc8;
-      }
+:root {
+  --my-color: #fff;
+  /* or any other variables/style */
+}
+[data-theme='dark'] {
+  --my-color: #000;
+}
+[data-theme='pink'] {
+  --my-color: #ffabc8;
+}
 
-      /*
+    /*
     @import "tailwindcss";
     @plugin "daisyui" {
       themes: dark --default, light --prefersdark, cupcake;
     }
-    */
+    */   
       .menu {
         --menu-active-bg: #6495ed;
         --menu-active-fg: white;
@@ -67,6 +67,7 @@ https://github.com/saadeghi/theme-change
         top: 0;
         bottom: 0;
         left: 0;
+        z-index: 100;
         padding: 90px 0 0;
         box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.1);
         z-index: 99;
@@ -105,40 +106,43 @@ https://github.com/saadeghi/theme-change
         white-space: pre !important;
       }
 
-      #terminal {
-        font-family: "courier new", Futura, Helvetica, "游ゴシック", "メイリオ", Osaka;
-        border: none; /* 変な余白が出ないように */
-        /*color: white;*/
-        font-size: 10pt;
-      }
-/*
-      #theme-img2 {
-        width: 30px;
-        height: 40px;
-        color: red;
-        background-color: green;
-      }
-*/
-      .light-mode {
-        width: 30px;
-        height: 40px;
-        border: 0;
-        /* color: #000000; */
-        background: url(images/light-mode-svgrepo-com.svg) no-repeat;
-        background-size: 100% 100%;
-      }
+#terminal{
+    font-family: 'courier new', Futura, Helvetica, '游ゴシック', 'メイリオ', Osaka;
+    border: none;    /* 変な余白が出ないように */
+    /*color: white;*/
+    font-size: 10pt;
+}
 
-      .dark-mode {
-        width: 30px;
-        height: 40px;
-        border: 0;
-        background: url(images/dark-mode-svgrepo-com.svg) no-repeat;
-        background-size: 100% 100%;
-      }
+
+#theme-img2 {
+width: 30px;
+height: 40px;
+color: red;
+background-color: green;
+}
+
+.light-mode{
+width: 30px;
+height: 40px;
+border: 0;
+/* color: #000000; */
+background: url(images/light-mode-svgrepo-com.svg) no-repeat;
+background-size: 100% 100%;
+}
+
+
+.dark-mode{
+width: 30px;
+height: 40px;
+border: 0;
+background: url(images/dark-mode-svgrepo-com.svg) no-repeat;
+background-size: 100% 100%;
+}
+
     </style>
   </head>
   <body>
-    <div >
+    <div>
       <div class="navbar bg-base-100 shadow-sm gap-4">
         <div class="flex-none">
           <button class="btn btn-square btn-ghost">
@@ -150,15 +154,15 @@ https://github.com/saadeghi/theme-change
           <a class="btn btn-ghost text-xl">daisyUI</a>
         </div>
         <div class="flex-none">
-          <div id="theme-img" class="dark-mode"></div>
+		<div id="theme-img" class="dark-mode" ></div>
         </div>
-        <!--
+	<!--
         <div class="flex-none">
 		<img src="images/light-mode-svgrepo-com.svg" id="theme-img2" ></img>
         </div>
 	-->
         <div class="flex-none">
-          <button id="theme-toggle" data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" onclick="theme(this)">dark</button>
+		<button id="theme-toggle" data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" onclick="theme(this)">dark</button>
         </div>
         <div class="flex-none">
           <button class="btn btn-square btn-ghost">
@@ -167,14 +171,14 @@ https://github.com/saadeghi/theme-change
             </svg>
           </button>
         </div>
-        <!--
+	<!--
         <div class="flex-none">
 		<button data-toggle-theme="dark,light" data-act-class="ACTIVECLASS"></button>
         </div>
 	-->
       </div>
-      <div class="flex h-235">
-        <div class="w-64 flex-1  overflow-y-scroll">
+      <div class="flex">
+        <div class="w-64 flex-1 h-180 overflow-y-scroll">
           <!--MENU-->
           <div class="position-sticky">
             <!--
@@ -424,13 +428,13 @@ https://github.com/saadeghi/theme-change
             </ul>
           </div>
         </div>
-        <div class="flex-5  overflow-y-scroll">
+        <div class="flex-5 h-180 overflow-y-scroll">
           <!--MAIN-->
           <div class="navbar2 bg-blue-500">
             <!--
             <button class="btn btn-ghost text-xl" id="title">daisyUI</button>
 	    -->
-            <button class="btn btn-ghost text-l" id="title">daisyUI</button>
+            <button class="btn  btn-ghost text-l" id="title">daisyUI</button>
           </div>
 
           <div class="iframe-base sticky top-10 z-40">
@@ -449,7 +453,7 @@ https://github.com/saadeghi/theme-change
             </div>
           </div>
         </div>
-        <!--
+	<!--
         <footer class="pt-5 d-flex justify-content-between">
           <span>Copyright © 2019-2020 <a href="https://themesberg.com">Themesberg</a></span>
           <ul class="nav m-0">
@@ -465,9 +469,11 @@ https://github.com/saadeghi/theme-change
           </ul>
         </footer>
 	-->
-        <textarea id="terminal"  rows="20" cols="30" spellcheck="false"></textarea>
+        <textarea id="terminal" rows="20" cols="30" spellcheck="false"></textarea>
+
+
       </div>
-      <!-- end flex -->
+        <!-- end flex -->
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -476,7 +482,7 @@ https://github.com/saadeghi/theme-change
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script>
-      /*
+	    /*
       new Chartist.Line(
         "#traffic-chart",
         {
@@ -524,25 +530,27 @@ https://github.com/saadeghi/theme-change
           }
         }
 
-        const htmls = document.getElementsByTagName("html");
-        const mode = htmls[0].getAttribute("data-theme");
-        const toggle = document.getElementById("theme-toggle");
+	const htmls = document.getElementsByTagName('html')
+        const mode = htmls[0].getAttribute('data-theme')
+	const toggle = document.getElementById('theme-toggle')
         //toggle.innerText = mode;
         console.log(mode);
-        const img = document.getElementById("theme-img");
+	const img = document.getElementById('theme-img')
         if (mode == "dark") {
-          toggle.innerText = "dark";
-          if (img.classList.contains("light-mode")) {
-            img.classList.remove("light-mode");
-          }
-          img.classList.add("dark-mode");
+             toggle.innerText = "dark";
+             if(img.classList.contains('light-mode')){
+                 img.classList.remove('light-mode')
+              }
+              img.classList.add('dark-mode')
         } else {
-          toggle.innerText = "light";
-          if (img.classList.contains("dark-mode")) {
-            img.classList.remove("dark-mode");
-          }
-          img.classList.add("light-mode");
-        }
+             toggle.innerText = "light";
+             if(img.classList.contains('dark-mode')){
+                 img.classList.remove('dark-mode')
+              }
+              img.classList.add('light-mode')
+	}
+
+
       };
 
       async function show(obj) {
@@ -573,25 +581,26 @@ https://github.com/saadeghi/theme-change
         console.log(src);
       }
       async function theme(obj) {
-        const htmls = document.getElementsByTagName("html");
-        const mode = htmls[0].getAttribute("data-theme");
-        const toggle = document.getElementById("theme-toggle");
+	const htmls = document.getElementsByTagName('html')
+        const mode = htmls[0].getAttribute('data-theme')
+	const toggle = document.getElementById('theme-toggle')
         //toggle.innerText = mode;
         console.log(mode);
-        const img = document.getElementById("theme-img");
+	const img = document.getElementById('theme-img')
         if (mode == "light") {
-          toggle.innerText = "dark";
-          if (img.classList.contains("light-mode")) {
-            img.classList.remove("light-mode");
-          }
-          img.classList.add("dark-mode");
+             toggle.innerText = "dark";
+             if(img.classList.contains('light-mode')){
+                 img.classList.remove('light-mode')
+              }
+              img.classList.add('dark-mode')
         } else {
-          toggle.innerText = "light";
-          if (img.classList.contains("dark-mode")) {
-            img.classList.remove("dark-mode");
-          }
-          img.classList.add("light-mode");
-        }
+             toggle.innerText = "light";
+             if(img.classList.contains('dark-mode')){
+                 img.classList.remove('dark-mode')
+              }
+              img.classList.add('light-mode')
+	}
+  
       }
     </script>
 
@@ -682,13 +691,13 @@ https://github.com/saadeghi/theme-change
       };
     </script>
     <script>
-      const terminal = document.getElementById("terminal");
+        const terminal = document.getElementById("terminal");
 
-      function captureLog(msg) {
-        terminal.value += msg;
-        terminal.value += "\n";
-      }
-      window.console.log = captureLog;
+        function captureLog(msg) {
+                terminal.value += msg;
+                terminal.value += '\n';
+        }
+        window.console.log = captureLog;
     </script>
   </body>
 </html>
