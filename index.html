@@ -13,8 +13,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark-reasonable.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+<!--
+https://github.com/saadeghi/theme-change
+-->
+    <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 
     <style>
+:root {
+  --my-color: #fff;
+  /* or any other variables/style */
+}
+[data-theme='dark'] {
+  --my-color: #000;
+}
+[data-theme='pink'] {
+  --my-color: #ffabc8;
+}
     /*
     @import "tailwindcss";
     @plugin "daisyui" {
@@ -94,7 +108,7 @@
 #terminal{
     font-family: 'courier new', Futura, Helvetica, '游ゴシック', 'メイリオ', Osaka;
     border: none;    /* 変な余白が出ないように */
-    color: white;
+    /*color: white;*/
     font-size: 10pt;
 }
 
@@ -113,12 +127,20 @@
           <a class="btn btn-ghost text-xl">daisyUI</a>
         </div>
         <div class="flex-none">
+		<button id="theme-toggle" data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" onclick="theme(this)">dark</button>
+        </div>
+        <div class="flex-none">
           <button class="btn btn-square btn-ghost">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-5 w-5 stroke-current">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
             </svg>
           </button>
         </div>
+	<!--
+        <div class="flex-none">
+		<button data-toggle-theme="dark,light" data-act-class="ACTIVECLASS"></button>
+        </div>
+	-->
       </div>
       <div class="flex">
         <div class="w-64 flex-1 h-180 overflow-y-scroll">
@@ -374,7 +396,10 @@
         <div class="flex-5 h-180 overflow-y-scroll">
           <!--MAIN-->
           <div class="navbar2 bg-blue-500">
+            <!--
             <button class="btn btn-ghost text-xl" id="title">daisyUI</button>
+	    -->
+            <button class="btn  btn-ghost text-l" id="title">daisyUI</button>
           </div>
 
           <div class="iframe-base sticky top-10 z-40">
@@ -498,6 +523,14 @@
         code.innerHTML = hljs.highlight(text, { language: "javascript" }).value;
         console.log(src);
       }
+      async function theme(obj) {
+        console.dir(obj)
+	const htmls = document.getElementsByTagName('html')
+        console.log(htmls[0].getAttribute('data-theme'))
+        const mode = htmls[0].getAttribute('data-theme')
+	const toggle = document.getElementById('theme-toggle')
+        toggle.innerText = mode;
+      }
     </script>
 
     <script>
@@ -593,7 +626,7 @@
                 terminal.value += msg;
                 terminal.value += '\n';
         }
-        window.console.log = captureLog;
+        //window.console.log = captureLog;
     </script>
   </body>
 </html>
