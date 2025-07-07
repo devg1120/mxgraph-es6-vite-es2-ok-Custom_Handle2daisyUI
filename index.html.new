@@ -18,6 +18,10 @@
     -->
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.6.0/split.min.js"></script>
+
+
+
     <style>
       :root {
         --my-color: #fff;
@@ -93,6 +97,12 @@
         color: #0d6efd;
       }
 */
+
+      #iframe {
+       height: 55vh;
+       width: 100%;
+
+      }
       pre code {
         word-wrap: normal !important;
         overflow-wrap: normal !important;
@@ -417,9 +427,10 @@
             <button class="btn btn-ghost text-xl" id="title">daisyUI</button>
           </div>
 
-          <div class="iframe-base bg-base-100 sticky top-10 z-40">
+  
+          <div class="iframe-base bg-base-100 sticky top-10 z-40 ">
             <div id="desc"></div>
-            <div id="iframe"  class="bg-base-100"></div>
+            <div id="iframe_base" ></div>
           </div>
 
           <div class="row">
@@ -434,9 +445,11 @@
           </div>
         </div>
 
+
       <div class="flex-1  overflow-y-scroll">
         <textarea id="terminal"  rows="20" cols="30" spellcheck="false"></textarea>
       </div>
+
       </div>
       <!-- end flex -->
     </div>
@@ -470,13 +483,14 @@
       let active = null;
 
       window.onload = function () {
-        const parent = document.getElementById("iframe");
+
+        const parent = document.getElementById("iframe_base");
         iframe = document.createElement("iframe");
-        iframe.classList.add("bg-base-100");
         iframe.src = src;
+        iframe.id = "iframe";
         //iframe.width = "800";
-        iframe.width = "100%";
-        iframe.height = "350";
+        //iframe.width = "80%";
+        //iframe.height = "300px";
         parent.appendChild(iframe);
         title_ele = document.getElementById("title");
         //src_ele = document.getElementById("src");

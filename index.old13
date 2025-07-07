@@ -159,13 +159,6 @@
 		-->
             <ul class="menu bg-base-150 w-56">
               <li>
-                <button value="examples/grapheditor/www/index.html" onclick="show(this)">Graph Editor</button>
-              </li>
-              <li>
-                <button value="examples/editors/diagrameditor.html" onclick="show(this)">mxDraw</button>
-              </li>
-	      <hr>
-              <li>
                 <button value="examples/anchors.html" onclick="show(this)">Anchors</button>
               </li>
               <li>
@@ -419,7 +412,7 @@
 
           <div class="iframe-base bg-base-100 sticky top-10 z-40">
             <div id="desc"></div>
-            <div id="iframe"  class="bg-base-100"></div>
+            <div id="iframe"></div>
           </div>
 
           <div class="row">
@@ -433,10 +426,23 @@
             </div>
           </div>
         </div>
-
-      <div class="flex-1  overflow-y-scroll">
+        <!--
+        <footer class="pt-5 d-flex justify-content-between">
+          <span>Copyright © 2019-2020 <a href="https://themesberg.com">Themesberg</a></span>
+          <ul class="nav m-0">
+            <li class="nav-item">
+              <a class="nav-link text-secondary" aria-current="page" href="#">Privacy Policy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="#">Terms and conditions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="#">Contact</a>
+            </li>
+          </ul>
+        </footer>
+	-->
         <textarea id="terminal"  rows="20" cols="30" spellcheck="false"></textarea>
-      </div>
       </div>
       <!-- end flex -->
     </div>
@@ -472,10 +478,9 @@
       window.onload = function () {
         const parent = document.getElementById("iframe");
         iframe = document.createElement("iframe");
-        iframe.classList.add("bg-base-100");
         iframe.src = src;
         //iframe.width = "800";
-        iframe.width = "100%";
+        iframe.width = "70%";
         iframe.height = "350";
         parent.appendChild(iframe);
         title_ele = document.getElementById("title");
