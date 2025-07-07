@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/atom-one-dark-reasonable.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
     <!--
-     ref  https://github.com/saadeghi/theme-change
-    -->
+https://github.com/saadeghi/theme-change
+-->
     <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 
     <style>
@@ -30,18 +30,26 @@
         --my-color: #ffabc8;
       }
 
+      /*
+    @import "tailwindcss";
+    @plugin "daisyui" {
+      themes: dark --default, light --prefersdark, cupcake;
+    }
+    */
       .menu {
         --menu-active-bg: #6495ed;
         --menu-active-fg: white;
       }
 
-      .main-content {
-        max-height: calc(100vh - 90px);
-        /*max-height: 100vh ;*/
-        z-index: 40;
-        margin: 0;
-        padding: 0;
-      }
+      /*
+       iframe {
+         border: 2px red;
+	 padding: 0;
+	 margin: 0;
+         background-color: #ffffff;
+
+       }
+*/
       .navbar2 {
         position: sticky;
         top: 0px;
@@ -49,13 +57,11 @@
         margin: 0;
         padding: 0;
       }
-/*
+
       .iframe-base {
         margin: 0;
         background-color: #ffffff;
       }
-*/
-/*
       .sidebar {
         position: fixed;
         top: 0;
@@ -92,7 +98,7 @@
       .sidebar .nav-link.active {
         color: #0d6efd;
       }
-*/
+
       pre code {
         word-wrap: normal !important;
         overflow-wrap: normal !important;
@@ -101,10 +107,18 @@
 
       #terminal {
         font-family: "courier new", Futura, Helvetica, "游ゴシック", "メイリオ", Osaka;
-        border: none; 
+        border: none; /* 変な余白が出ないように */
         /*color: white;*/
         font-size: 10pt;
       }
+/*
+      #theme-img2 {
+        width: 30px;
+        height: 40px;
+        color: red;
+        background-color: green;
+      }
+*/
       .light-mode {
         width: 30px;
         height: 40px;
@@ -123,7 +137,6 @@
       }
     </style>
   </head>
-
   <body>
     <div >
       <div class="navbar bg-base-100 shadow-sm gap-4">
@@ -139,6 +152,11 @@
         <div class="flex-none">
           <div id="theme-img" class="dark-mode"></div>
         </div>
+        <!--
+        <div class="flex-none">
+		<img src="images/light-mode-svgrepo-com.svg" id="theme-img2" ></img>
+        </div>
+	-->
         <div class="flex-none">
           <button id="theme-toggle" data-toggle-theme="dark,light" data-act-class="ACTIVECLASS" onclick="theme(this)">dark</button>
         </div>
@@ -149,8 +167,13 @@
             </svg>
           </button>
         </div>
+        <!--
+        <div class="flex-none">
+		<button data-toggle-theme="dark,light" data-act-class="ACTIVECLASS"></button>
+        </div>
+	-->
       </div>
-      <div class="flex  main-content">
+      <div class="flex h-235">
         <div class="w-64 flex-1  overflow-y-scroll">
           <!--MENU-->
           <div class="position-sticky">
@@ -403,14 +426,14 @@
         </div>
         <div class="flex-5  overflow-y-scroll">
           <!--MAIN-->
-          <div class="navbar2 bg-base-200">
+          <div class="navbar2 bg-blue-500">
             <!--
             <button class="btn btn-ghost text-xl" id="title">daisyUI</button>
 	    -->
-            <button class="btn btn-ghost text-xl" id="title">daisyUI</button>
+            <button class="btn btn-ghost text-l" id="title">daisyUI</button>
           </div>
 
-          <div class="iframe-base bg-base-100 sticky top-10 z-40">
+          <div class="iframe-base sticky top-10 z-40">
             <div id="desc"></div>
             <div id="iframe"></div>
           </div>
